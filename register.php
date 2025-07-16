@@ -10,6 +10,20 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $error = "Username sudah digunakan!";
             break;
         }
+    } 
+    
+    if (!isset($error)) {
+        if (strlen($password)< 8){
+            $error = "password minimal 8 karakter!";
+        } elseif (!preg_match("/[A-Z]/",$password)){
+            $error = "password harus mengandung huruf besar!";
+        } elseif (!preg_match("/[a-z]/", $password)) {
+            $error = "password harus mengandung huruf kecil!";
+        } elseif (!preg_match("/[0-9]/", $password)) {
+            $error = "password harus mengandung angka!";
+        } elseif (!preg_match("/[\W]/", $password)) {
+            $error = "password harus mengandung simbol (misal ! @ # ?)";
+        }
     }
 
     if (!isset($error)) {
