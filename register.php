@@ -27,7 +27,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <link rel="stylesheet" href="style.css">
 
 <div class="container">
-    <h2>Daftar</h2>
+    <h2>Register</h2>
     <?php 
     if (isset($error)) echo "<p style='color:red; text-align:center;'>$error</p>";
     if (isset($success)) echo "<p style='color:green; text-align:center;'>$success</p>";
@@ -35,7 +35,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <form method="POST">
         <input type="text" name="username" placeholder="Username" required>
         <input type="password" name="password" placeholder="Password" required>
-        <button type="submit">Daftar</button>
+        <button type="submit">Register</button>
     </form>
     <div class="message">
         <p>Sudah punya akun? <a href="index.php">Login di sini</a></p>
